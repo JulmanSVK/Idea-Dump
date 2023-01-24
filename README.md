@@ -1,5 +1,8 @@
 # Idea-Dump
-Just a landfill of random ideas. Why? I don't know.
+Just a landfill of random ideas. 
+
+Why? I don't know.
+
 Maybe one day they will become actual projects.
 
 
