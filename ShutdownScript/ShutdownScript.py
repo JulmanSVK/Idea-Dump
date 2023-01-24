@@ -31,8 +31,9 @@ def main():
         print("PC will shutdown in", time/3600, "Hours")
 
     else:
-        print("Niečo sa podrbalo")
-
+        print("Sum Ting Wong")
+          
+label1 = tk.Label(win, text="Shutdown pc in...").pack()
 time_ent = tk.Entry(win,textvariable = time_var).pack()
 
 r1 = Radiobutton(win, text = "Seconds", variable=radio, value=1).pack()
