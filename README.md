@@ -4,4 +4,4 @@ Just a landfill of random ideas
 
 ## 1. Shutdown Script
 
-Easy script for timed shutdown of your pc.
+Script for easy timed shutdown of your pc.
