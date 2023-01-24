@@ -2,6 +2,6 @@
 Just a landfill of random ideas
 
 
-## Shutdown Script
+## 1. Shutdown Script
 
 Easy script for timed shutdown of your pc.
