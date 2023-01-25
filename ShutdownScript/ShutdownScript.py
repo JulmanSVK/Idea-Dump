@@ -12,7 +12,7 @@ def abort():
     os.system("shutdown /a")
     print("Pc shutdown aborted")
 
-def main():
+def countdownSys():
     time = time_var.get()
     X = str(radio.get())
 
@@ -40,6 +40,6 @@ r1 = Radiobutton(win, text = "Seconds", variable=radio, value=1).pack()
 r2 = Radiobutton(win, text = "Minutes", variable=radio, value=2).pack()
 r3 = Radiobutton(win, text = "Hours", variable=radio, value=3).pack()
 
-sub_btn = tk.Button(win,text = 'Submit', command = main).pack()
+sub_btn = tk.Button(win,text = 'Submit', command = countdownSys).pack()
 stp_btn = tk.Button(win,text = 'Stop Shutdown', command = abort).pack()
 mainloop()
