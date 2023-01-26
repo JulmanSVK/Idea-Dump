@@ -8,10 +8,6 @@ win.geometry("400x200")
 radio = IntVar()
 time_var = tk.StringVar()
 
-def abort():
-    os.system("shutdown /a")
-    print("Pc shutdown aborted")
-
 def countdownSys():
     time = time_var.get()
     X = str(radio.get())
@@ -32,14 +28,51 @@ def countdownSys():
 
     else:
         print("Sum Ting Wong")
+        
+def abort():
+    os.system("shutdown /a")
+    print("Pc shutdown aborted")
           
-label1 = tk.Label(win, text="Shutdown pc in...").pack()
-time_ent = tk.Entry(win,textvariable = time_var).pack()
+label1 = tk.Label(win,
+                  text="Shutdown pc in...",
+                  font="montserrat 12 bold").pack(side=TOP)
 
-r1 = Radiobutton(win, text = "Seconds", variable=radio, value=1).pack()
-r2 = Radiobutton(win, text = "Minutes", variable=radio, value=2).pack()
-r3 = Radiobutton(win, text = "Hours", variable=radio, value=3).pack()
+time_ent = tk.Entry(win,
+                    font="montserrat 12",
+                    textvariable = time_var).pack(side=TOP)
 
-sub_btn = tk.Button(win,text = 'Submit', command = countdownSys).pack()
-stp_btn = tk.Button(win,text = 'Stop Shutdown', command = abort).pack()
+midframe = tk.Frame(win).pack(side=TOP)
+botframe = tk.Frame(win).pack(side=BOTTOM)
+
+r1 = Radiobutton(midframe,
+                 text = "Seconds",
+                 variable=radio,
+                 font="montserrat 12 bold",
+                 value=1).pack(side=LEFT)
+
+r2 = Radiobutton(midframe,
+                 text = "Minutes",
+                 variable=radio,
+                 font="montserrat 12 bold",
+                 value=2).pack(side=LEFT)
+
+
+r3 = Radiobutton(midframe,
+                 text = "Hours",
+                 variable=radio,
+                 font="montserrat 12 bold",
+                 value=3).pack(side=LEFT)
+
+sub_btn = tk.Button(botframe,
+                    text="Shutdown PC",
+                    font="montserrat 12 bold",
+                    command = countdownSys).pack(side=BOTTOM)
+
+stp_btn = tk.Button(botframe,
+                    text = 'Stop Shutdown',
+                    background="red",
+                    foreground="white",
+                    font="montserrat 12 bold",
+                    command = abort).pack(side=BOTTOM)
+
 mainloop()
