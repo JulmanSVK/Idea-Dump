@@ -8,6 +8,10 @@ win.geometry("400x200")
 radio = IntVar()
 time_var = tk.StringVar()
 
+choises = [("Seconds", 1),
+           ("Minutes", 2),
+           ("Hours", 3),]
+
 def countdownSys():
     time = time_var.get()
     X = str(radio.get())
@@ -28,51 +32,50 @@ def countdownSys():
 
     else:
         print("Sum Ting Wong")
-        
+
 def abort():
     os.system("shutdown /a")
     print("Pc shutdown aborted")
-          
+    
+    
 label1 = tk.Label(win,
                   text="Shutdown pc in...",
                   font="montserrat 12 bold").pack()
 
 time_ent = tk.Entry(win,
-                    font="montserrat 12",
                     textvariable = time_var).pack()
 
-midframe = tk.Frame(win).pack()
-botframe = tk.Frame(win).pack(side=BOTTOM)
-
-r1 = Radiobutton(midframe,
+r1 = Radiobutton(win,
                  text = "Seconds",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=1).pack(side=LEFT)
+                 justify=tk.LEFT,
+                 value=1).pack()
 
-r2 = Radiobutton(midframe,
+r2 = Radiobutton(win,
                  text = "Minutes",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=2).pack(side=LEFT)
+                 justify=tk.LEFT,
+                 value=2).pack()
 
 
-r3 = Radiobutton(midframe,
+r3 = Radiobutton(win,
                  text = "Hours",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=3).pack(side=LEFT)
+                 justify=tk.LEFT,
+                 value=3).pack()
 
-sub_btn = tk.Button(botframe,
-                    text="Shutdown PC",
+sub_btn = tk.Button(win,
+                    text="Submit",
                     font="montserrat 12 bold",
-                    command = countdownSys).pack(side=BOTTOM)
+                    command = countdownSys).pack()
 
-stp_btn = tk.Button(botframe,
+stp_btn = tk.Button(win,
                     text = 'Stop Shutdown',
                     background="red",
                     foreground="white",
                     font="montserrat 12 bold",
-                    command = abort).pack(side=BOTTOM)
-
+                    command = abort).pack()
 mainloop()
