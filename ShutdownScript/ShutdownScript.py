@@ -6,7 +6,7 @@ from sys import platform
 print(platform)
 
 win = Tk()
-win.geometry("350x175")
+win.geometry("350x200")
 
 radio = IntVar()
 time_var = tk.StringVar()
