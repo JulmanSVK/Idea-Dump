@@ -6,7 +6,7 @@ from sys import platform
 print(platform)
 
 win = Tk()
-win.geometry("300x175")
+win.geometry("350x200")
 
 radio = IntVar()
 time_var = tk.StringVar()
@@ -86,6 +86,6 @@ stp_btn = tk.Button(botframe,
                     background="red",
                     foreground="white",
                     font="montserrat 12 bold",
-                    command = abort).pack(side=BOTTOM, padx=20)
+                    command = abort).pack(side=RIGHT, padx=20)
 
 mainloop()
