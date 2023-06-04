@@ -1,12 +1,24 @@
 from tkinter import *
 import tkinter as tk
 import os
+from sys import platform
+
+print(platform)
 
 win = Tk()
-win.geometry("400x200")
+win.geometry("300x175")
 
 radio = IntVar()
 time_var = tk.StringVar()
+
+def abort():
+    if platform == "win32":
+        os.system("shutdown /a")
+    elif platform == "linux" or platform == "linux2":
+        os.system("sudo shutdown -c")
+    elif platform == "darwin":
+        os.system()
+    print("Pc shutdown aborted")
 
 def countdownSys():
     time = time_var.get()
@@ -74,6 +86,6 @@ stp_btn = tk.Button(botframe,
                     background="red",
                     foreground="white",
                     font="montserrat 12 bold",
-                    command = abort).pack(side=RIGHT, padx=20)
+                    command = abort).pack(side=BOTTOM, padx=20)
 
 mainloop()
