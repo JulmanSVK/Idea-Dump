@@ -41,38 +41,39 @@ time_ent = tk.Entry(win,
                     font="montserrat 12",
                     textvariable = time_var).pack()
 
-midframe = tk.Frame(win).pack()
-botframe = tk.Frame(win).pack(side=BOTTOM)
 
-r1 = Radiobutton(midframe,
+r1 = Radiobutton(win,
                  text = "Seconds",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=1).pack(side=LEFT)
+                 value=1).pack()
 
-r2 = Radiobutton(midframe,
+r2 = Radiobutton(win,
                  text = "Minutes",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=2).pack(side=LEFT)
+                 value=2).pack()
 
 
-r3 = Radiobutton(midframe,
+r3 = Radiobutton(win,
                  text = "Hours",
                  variable=radio,
                  font="montserrat 12 bold",
-                 value=3).pack(side=LEFT)
+                 value=3).pack()
+
+
+botframe = tk.Frame(win).pack()
 
 sub_btn = tk.Button(botframe,
                     text="Shutdown PC",
                     font="montserrat 12 bold",
-                    command = countdownSys).pack(side=BOTTOM)
+                    command = countdownSys).pack(side=LEFT, padx=20)
 
 stp_btn = tk.Button(botframe,
                     text = 'Stop Shutdown',
                     background="red",
                     foreground="white",
                     font="montserrat 12 bold",
-                    command = abort).pack(side=BOTTOM)
+                    command = abort).pack(side=RIGHT, padx=20)
 
 mainloop()
