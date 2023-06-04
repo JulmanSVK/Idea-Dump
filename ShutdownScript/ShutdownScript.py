@@ -6,7 +6,7 @@ from sys import platform
 print(platform)
 
 win = Tk()
-win.geometry("300x175")
+win.geometry("350x175")
 
 radio = IntVar()
 time_var = tk.StringVar()
@@ -53,12 +53,12 @@ time_ent = tk.Entry(win,
                     font="montserrat 12",
                     textvariable = time_var).pack()
 
-
-r1 = Radiobutton(win,
-                 text = "Seconds",
-                 variable=radio,
-                 font="montserrat 12 bold",
-                 value=1).pack()
+if platform == "win32":
+    r1 = Radiobutton(win,
+                     text = "Seconds",
+                     variable=radio,
+                     font="montserrat 12 bold",
+                     value=1).pack()
 
 r2 = Radiobutton(win,
                  text = "Minutes",
@@ -86,6 +86,6 @@ stp_btn = tk.Button(botframe,
                     background="red",
                     foreground="white",
                     font="montserrat 12 bold",
-                    command = abort).pack(side=BOTTOM, padx=20)
+                    command = abort).pack(side=RIGHT, padx=20)
 
 mainloop()
