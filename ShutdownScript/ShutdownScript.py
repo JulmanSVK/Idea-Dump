@@ -53,12 +53,12 @@ time_ent = tk.Entry(win,
                     font="montserrat 12",
                     textvariable = time_var).pack()
 
-
-r1 = Radiobutton(win,
-                 text = "Seconds",
-                 variable=radio,
-                 font="montserrat 12 bold",
-                 value=1).pack()
+if platform == "win32":
+    r1 = Radiobutton(win,
+                     text = "Seconds",
+                     variable=radio,
+                     font="montserrat 12 bold",
+                     value=1).pack()
 
 r2 = Radiobutton(win,
                  text = "Minutes",
